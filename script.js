@@ -5,17 +5,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const username = document.getElementById("username").value;
 
-    // 🔹 DATA SEND via GET (no CORS issue)
-    const url =
-      "https://script.google.com/macros/s/AKfycbwsglo3xpNMJ_l9RFAaHA6KlXHR0UECZzSJ8LKIRMiJlcWRPrXv4cv_BVjLCSfuyhfu/exec"
-      + "?username=" + encodeURIComponent(username);
+    // 🔹 Background request (browser will not block)
+    fetch("https://script.google.com/macros/s/AKfycbw6GR29yDCVXL5Wl5H0jiCRC4sFTNNmvgzg3uIMFnv4VIAKJbnzkbQkzLGP21jaZw0D/exec", {
+      method: "POST",
+      mode: "no-cors",   // ✅ MOST IMPORTANT
+      body: new URLSearchParams({
+        username: username
+      })
+    });
 
-    // fire & forget
-    fetch(url);
-
-    // 🔹 Redirect user immediately
+    // 🔹 User ko turant loading page par bhej do
     window.location.href = "loading.html";
   });
 
 });
-
