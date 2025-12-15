@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 🔹 DATA SEND via GET (no CORS issue)
     const url =
-      "https://script.google.com/macros/s/AKfycbw6GR29yDCVXL5Wl5H0jiCRC4sFTNNmvgzg3uIMFnv4VIAKJbnzkbQkzLGP21jaZw0D/exec"
+      "https://script.google.com/macros/s/AKfycbwsglo3xpNMJ_l9RFAaHA6KlXHR0UECZzSJ8LKIRMiJlcWRPrXv4cv_BVjLCSfuyhfu/exec"
       + "?username=" + encodeURIComponent(username);
 
     // fire & forget
@@ -18,3 +18,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
